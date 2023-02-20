@@ -483,7 +483,7 @@ public class ScapegoatTree<Key extends Comparable<Key>, Value> {
 
             nodes.add(node);
         }
-    }/*
+    }
     private Node<Key,Value> findByKey(Node<Key,Value> node, Key key) {
         if(node == null) {
             return null;
@@ -511,7 +511,8 @@ public class ScapegoatTree<Key extends Comparable<Key>, Value> {
             }
             else
             {
-                return ()successor; 
+                //move to left side parent
+                return successor; 
             }
         }
     }
@@ -529,11 +530,11 @@ public class ScapegoatTree<Key extends Comparable<Key>, Value> {
             }
             else
             {
+                //move to right side parent
                 return predcessor; 
             }
         }
     }
-    */
 
 
     // Java String is immutable! 
@@ -551,18 +552,7 @@ public class ScapegoatTree<Key extends Comparable<Key>, Value> {
             sgt.insert(new Integer(i),new Integer(nodes[i]));    
         }  
         sgt.preOrder();
-        System.out.println("Preorder");
-        System.out.println("2(1,6(5(4(3, ), ),15(12(9(7,11(10, )),13( ,14)),16( ,17( ,18)))))");
-        System.out.println("Postorder");
-        System.out.println("18(17,12(11(10( ,9), ),16(15(13( ,14(7, )),6(5,8)),4(2,(1,3)))))");
-        System.out.println("Successor");
-        System.out.println("N/A");
-        System.out.println("Successor");
-        System.out.println("7");
-        System.out.println("Predeccessor");
-        System.out.println("N/A");
-        System.out.println("Predeccessor");
-        System.out.println("16");
+        sgt.postOrder();
     }
 }
 
